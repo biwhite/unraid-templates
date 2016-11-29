@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ibrew</Name>
+  <Repository>biwhite/ibrew</Repository>
+  <Registry>https://hub.docker.com/r/biwhite/ibrew/</Registry>
+  <Network>host</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/biwhite/docker-ibrew</Support>
+  <Overview>Docker container for Tristan Crispijn's iBrew app.</Overview>
+  <Category>HomeAutomation:</Category>
+  <WebUI>http://[IP]:[PORT:2080]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/Tristan79/iBrew/raw/master/resources/icons/logo.png</Icon>
+  <ExtraParams/>
+  <Description>Docker container for Tristan Crispijn's iBrew app.</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ibrew</HostDir>
+      <ContainerDir>/root/.iBrew</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/var/run/dbus/system_bus_socket</HostDir>
+      <ContainerDir>/var/run/dbus/system_bus_socket</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="CONFIG" Target="/root/.iBrew" Default="/mnt/user/appdata/ibrew" Mode="rw" Description="Configs and logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ibrew</Config>
+  <Config Name="UPNP_DBUS" Target="/var/run/dbus/system_bus_socket" Default="/var/run/dbus/system_bus_socket" Mode="rw" Description="Container Path: /var/run/dbus/system_bus_socket" Type="Path" Display="advanced-hide" Required="false" Mask="false">/var/run/dbus/system_bus_socket</Config>
+</Container>

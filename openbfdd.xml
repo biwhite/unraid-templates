@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>openbfdd</Name>
+  <Repository>biwhite/openbfdd</Repository>
+  <Registry>https://hub.docker.com/r/biwhite/openbfdd/~/dockerfile/</Registry>
+  <Network>host</Network>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/biwhite/openbfdd/</Support>
+  <Overview>openbfdd - bi-directional forwarding detection daemon
+  </Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <Description>openbfdd&#xD;
+    OpenBFDd runs bi-directional forward detection.  This can be used to ensure a link between two devices is actually capable of forwarding traffic in both directions.  This can be used by routing protocols to determine whether to use a link or not, and quickly remove the routing if the link is no longer able to forward traffic.
+  </Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/openbfdd/</HostDir>
+      <ContainerDir>/etc/openbfdd/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="CONFIG" Target="/etc/openbfdd/" Default="" Mode="rw" Description="Container Path: /etc/openbfdd/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/openbfdd/</Config>
+</Container>
