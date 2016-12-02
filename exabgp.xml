@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>exabgp</Name>
+  <Repository>biwhite/exabgp</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Overview>Exabgp container&#xD;
+&#xD;
+Map a folder into /etc/exabgp&#xD;
+Config file lives at exabgp.conf.  If this doesn't exist on container startup, a sample file will be copied in place.&#xD;
+Full exabgp environment file is also generated on startup if it doesn't exist, at /etc/exabgp/exabgp.env&#xD;
+&#xD;
+This only makes outbound connections to remote port 179 for BGP, so does not need any mapped ports inbound.&#xD;
+</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Exa-Networks/exabgp/master/logo/Twitter.jpg</Icon>
+  <Description>Exabgp container&#xD;
+&#xD;
+Map a folder into /etc/exabgp&#xD;
+Config file lives at exabgp.conf.  If this doesn't exist on container startup, a sample file will be copied in place.&#xD;
+Full exabgp environment file is also generated on startup if it doesn't exist, at /etc/exabgp/exabgp.env&#xD;
+&#xD;
+This only makes outbound connections to remote port 179 for BGP, so does not need any mapped ports inbound.&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/exabgp</HostDir>
+      <ContainerDir>/etc/exabgp</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="CONFIG" Target="/etc/exabgp" Default="" Mode="rw" Description="Container Path: /etc/exabgp" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/exabgp</Config>
+</Container>
